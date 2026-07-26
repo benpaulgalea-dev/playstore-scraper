@@ -35,6 +35,12 @@ python scrape_reviews.py
 The local database is excluded from Git because reviews can contain personal
 information. See `PYTHON_COMMANDS.md` for additional usage notes.
 
+## Minimal proof of concept
+
+[`single_app_csv/scrape_to_csv.py`](single_app_csv/scrape_to_csv.py) is a
+single-file version for demonstrations. It downloads reviews for one configured
+app and writes them directly to CSV without using SQLite.
+
 ## Disclaimer
 
 This project uses the unofficial `google-play-scraper` package. Use it

@@ -3,4 +3,5 @@
 __pycache__/
 *.pyc
 data/
+single_app_csv/*.csv
 .DS_Store
