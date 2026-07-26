@@ -9,7 +9,17 @@ APP_ID = "bov.bankingapp.android"
 OUTPUT_FILE = "reviews.csv"
 
 reviews = reviews_all(APP_ID, lang="en", country="mt", sort=Sort.NEWEST)
-fields = ["reviewId", "userName", "content", "score", "thumbsUpCount", "at"]
+fields = [
+    "reviewId",
+    "userName",
+    "content",
+    "score",
+    "reviewCreatedVersion",
+    "at",
+    "thumbsUpCount",
+    "replyContent",
+    "repliedAt",
+]
 
 with open(OUTPUT_FILE, "w", newline="", encoding="utf-8") as file:
     writer = csv.DictWriter(file, fieldnames=fields)
