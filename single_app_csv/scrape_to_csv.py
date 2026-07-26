@@ -24,8 +24,10 @@ fields = [
 with open(OUTPUT_FILE, "w", newline="", encoding="utf-8") as file:
     writer = csv.DictWriter(file, fieldnames=fields)
     writer.writeheader()
-    writer.writerows(
-        {field: review.get(field) for field in fields} for review in reviews
-    )
+    for review in reviews:
+        row = {}
+        for field in fields:
+            row[field] = review.get(field)
+        writer.writerow(row)
 
 print(f"Saved {len(reviews)} reviews to {OUTPUT_FILE}")
